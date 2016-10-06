@@ -66,18 +66,7 @@ func Doc(raw string) string {
 		} else if indentSize < minIndentSize {
 			minIndentSize = indentSize
 		}
-	}
-
-	// 2.
-	for i, line := range lines {
-		if i == 0 && skipFirstLine {
-			continue
-		}
-
-		if len(lines[i]) >= minIndentSize {
-			lines[i] = line[minIndentSize:]
-		}
-	}
+	} 
 
 	return strings.Join(lines, "\n")
 }
